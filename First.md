@@ -1,51 +1,71 @@
--- Create Staring
+# Git repository starting
 
-> echo "# AWS" >> README.md
 
-> git init
+### Create Staring
 
-> git add README.md
 
-> git commit -m "first commit"
+```bash
 
-> # git remote add origin git@github.com:username/new_repo
+echo "My Project Desc" >> README.md
 
-> git remote add origin https://github.com/andresmiguel39/git.git
+git init
 
-> git push -u origin <a donde o que quiero mandar> #brab el origin no sabe que este branch exite
+git add README.md
 
-"-- COMANDOS GIT"
+git commit -m "first commit"
 
-> git status (git status)
+git remote add origin git@github.com:username/new_repo
 
-> git add . (git add)
+git remote add origin https://github.com/username/new_repo
 
-> git commit -m "[26]…” (git commit)
+git push -u origin <BrachWhereIWantToCommitOrMaster> #Origin does know where to push changes
 
-> git status 
+```
 
-> git log --online (mostrar all changes)
 
-> git log --oneline (mostrar all changes una linea)
+### Tipical git comands
 
-> git checkout master
+```bash
 
-> git pull --rebase origin master
 
-> git checkout rama
+ git status (git status)
 
-> git rebase master (actualizarse a master)
+ git add . (git add)
 
-"-- Para amends un commit"
+ git commit -m "[26]…" (git commit)
 
-> Git commit —amend
+ git status 
 
-> Git push -f origin <branch>
+ git log --online (show all changes)
 
-> git -D <>  # delete branch 
+ git log --oneline (show all changes one line)
 
-> Git branch # branch existentes
+ git checkout master
 
-> Git checkout # selectionar rama 
+ git pull --rebase origin master
 
-> Git --amends # para escribir los cambios 
+ git checkout rama
+
+ git rebase master (actualizarse a master)
+
+```
+
+
+### For amends in commit
+
+```bash
+
+
+ Git commit —amend
+
+ Git push -f origin <branch>
+
+ git -D <>  # delete branch 
+
+ Git branch # branch existentes
+
+ Git checkout # selectionar rama 
+
+ Git --amends # para escribir los cambios 
+
+```
