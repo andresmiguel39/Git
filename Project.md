@@ -1,6 +1,6 @@
-#Commads in a project
+# Commads in a project
 
-##How it sould be
+## How it sould be
 
 Update into repository and deploy. 
 
