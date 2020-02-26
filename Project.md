@@ -1,43 +1,59 @@
-**siempre se debe iniciar en la rama develop 
+#Commads in a project
 
-1. cd C:/Repositorio_XXXX10/XXXX10001_Name_APP
+##How it sould be
 
-2. git checkout master <nombre rama> (develop - release - master)
----git branch -D <nombre rama> (para borrarla si se necesita) tambien se borra en VSTS
+Update into repository and deploy. 
 
-3. git pull origin  - para actualizar repo local desde vsts
+1. Go into repository
+```shell
+  cd C:/Repository_XXXX10/XXXX10001_Name_APP
+```
+2. Do a checkout, it allows you to set over the branch 
+```shell
+  git checkout master <brachname> #(develop - release - master)
+```
+3. We can use *-D* in case of you need to delete a branch and it deletes also on VSTS or any repository 
+```shell  
+  git branch -D <brachname>
+```  
+4. Update local repo
+```shell
+  git pull origin
+```  
+5. Create new branches
+```shell
+  git checkout -b features/HA_XXXXX203  
+```
+5. Copy files from outside or add new files to our local repo
+```shell
+  cp /path/from/copy .
+```
+6. Must be on red with the followed command
+```shell
+  git status
+```
+7. To add all the files to the branch
+```shell
+   git add -A 
+```
+8. Now everything must be on green
+```shell
+  git status
+```
+9. Commit changes
+```shell
+  git commit -m "installation package HA_XXXXX203"
+```
+10. Push up all the changes to a repository
+```shell
+  git push origin <nombre de rama (featuresfeatures/HA_XXXXX203-06145)
+```
+11. If you are not familiar with Git remote repos, it is better to check it in that repository  
 
-4. git checkout -b features/HA_XXXXX203  para crear la rama
+12. Then we need to go to _pull requests_ and create one, then select the branch (depends of the environment), and then select also the work item for example de SU for isntalation and then create it, then, we need to wait to code review en and an aprpoval to make the merge.
 
-5. copio el archivo fuente en la ruta del repositorio
+13. After that go to pipelines en verify the status of CI, it must brind the new changes and compare en CD in the artifactory and it does a diff between files. 
 
-6. git status (debe salir en rojo)
+14. Go to pipelines of releases en verify the deployment.
 
-7. git add -A para traer todo tipo de archivo
-
-8. git status (debe salir en verde)
-
-9. git commit -m "instalacion paquete HA_XXXXX203"
-
-10. git push origin <nombre de rama (featuresfeatures/HA_XXXXX203-06145)> - para subir al repositorio de VSTS los cambios
-
-11. luego ir a vsts repos-branches a verificar la creación de la rama 
-
-12. luego ir a repos pull request y dar crear pull request seleccionar la rama develop y en workitems seleccionar la HU XXXZZW5 para la instalacion y dar crear
-
-queda pendiente la aprobación para pasar a complete y luego complete merge
-
-13. luego ir al pipeline BUILDS verificar el estado en CI sube al repo la nueva rama y en CD pasa la rama a artifactory y hace la dif entre los archivos
-
-luego ir al pipleine de RELEASE para verificar ejecucion de la receta de urbancode
-
-si falla, se hace redeploy, si falla se va a repós-buids se busca el APP_CD y se pone de nuevo en cola
-
-PARA ISNTALAR EN CERTIFICACION
-12. luego ir a repos pull request y dar crear pull request seleccionar el paquete de origen y la rama releas y en workitems seleccionar la HU XXXZZW5 para la instalacion y dar crear
-
-queda pendiente la aprobación para pasar a complete y luego complete merge
-
-13. luego ir al pipeline BUILDS verificar el estado en CI sube al repo la nueva rama y en CD pasa la rama a artifactory y hace la dif entre los archivos
-
-luego ir al pipleine de RELEASE para ejecutar la receta de urbancode
+15. If it fails, you can try redeploying again.
