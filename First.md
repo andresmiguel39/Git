@@ -23,7 +23,7 @@ git push -u origin <BrachWhereIWantToCommitOrMaster> #Origin does know where to 
 ```
 
 
-### Tipical git comands
+### Tipical git commands
 
 ```bash
 
