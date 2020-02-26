@@ -1,4 +1,7 @@
-# repo1
-repo
+# Git commands 
 
-Basic Git Comands
+Basic Git Commands
+
+ - [x] First.md `basic commands`
+ 
+ - [x] Project.md `common commands in a project`
